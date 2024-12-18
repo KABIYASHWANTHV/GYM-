@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymFluencer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            background: #000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: #ff0000;
+        }
+
+        header nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        header a:hover {
+            color: #ff0000;
+        }
+
+        header button {
+            background-color: #ff0000;
+            color: #fff;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        header button:hover {
+            background-color: rgb(181, 150, 26);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('hero-bg.jpg') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #ff0000;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .hero button {
+            margin-top: 1.5rem;
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            border: none;
+            background-color: #ff0000;
+            color: #fff;
+            border-radius: 30px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .hero button:hover {
+            background-color: rgb(181, 150, 26);
+        }
+
+        /* Services Section */
+        .container {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #ff0000;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service {
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .service img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service h3 {
+            margin: 1rem 0;
+            color: #ff0000;
+            font-size: 1.8rem;
+        }
+
+        .service p {
+            padding: 0 1rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        .service button {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 0, 0, 0.4);
+        }
+
+        .service:hover button {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(45deg, #000, #222);
+            padding: 2rem 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        footer .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: #ff0000;
+        }
+        footer .footer-content .quick-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        footer .quick-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        footer .quick-links a:hover {
+            color: #ff0000;
+        }
+
+        footer p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .hero button {
+                font-size: 1rem;
+                padding: 8px 20px;
+            }
+
+            footer .footer-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>GymFluencer</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#benefit">Benefit</a>
+            <a href="#blog">Blog</a>
+            <a href="contactus.html" target="_blank">Contact Us</a>
+        </nav>
+        <button><a href="workout.html" target="_blank">Join Us Now</a></button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>WHAT IS THE DIET PLAN</h1>
+        <p>Tailored nutrition plans to help you achieve your fitness goals.<br> 
+            A diet plan is a structured approach to help you achieve specific fitness goals.<br>
+            Our diet plans are tailored to your needs and goals, and are designed to help you achieve optimal.
+         </p>
+        <button>Explore Now</button>
+    </section>
+
+    <!-- Services Section -->
+    <section class="container" id="services">
+        <h2>What We Offer</h2>
+        <div class="services">
+            <div class="service">
+                <img src="img1.png" alt="Weight Loss Plan">
+                <h3>Weight Loss Diet Plan</h3>
+                <p>Customized meal plans to help you shed fat and stay healthy.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="service">
+                <img src="img2.jpg" alt="Personalized Plan">
+                <h3>Personalized Diet Plan</h3>
+                <p>Plans curated to suit your unique lifestyle and goals.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="service">
+                <img src="img3.webp" alt="Muscle Gain">
+                <h3>Muscle Building Diet Plan</h3>
+                <p>Focus on hypertrophy and muscle gain with balanced nutrition.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="service">
+                <img src="img5.avif" alt="Keto Plan">
+                <h3>Keto Diet Plan</h3>
+                <p>Low-carb, high-fat plans for a ketogenic lifestyle.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="service">
+                <img src="img6.jpg" alt="Vegan Plan">
+                <h3>Vegetarian/Vegan Diet Plan</h3>
+                <p>Plant-based diet options for healthy living.</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <div class="quick-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="contactus.html">Contact Us</a>
+            </div>
+        </div>
+        <p>&copy; 2024 GymFluencer. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

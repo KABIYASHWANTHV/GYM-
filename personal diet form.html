@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Diet Plan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: #ff0000;
+        }
+
+        header nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        header a:hover {
+            color: #ff0000;
+        }
+
+        header button {
+            background-color: #ff0000;
+            color: #fff;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        header button:hover {
+            background-color: rgb(181, 150, 26);
+        }
+
+        .form-container {
+            background: #222;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+            width: 100%;
+            max-width: 500px;
+            margin: 50px auto;
+        }
+
+        .form-container h2 {
+            color: #ff0000;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border: 2px solid #ff0000;
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff0000;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: rgb(181, 150, 26);
+        }
+
+        .form-group .note {
+            font-size: 0.9rem;
+            color: #bbb;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        footer {
+            background: linear-gradient(45deg, #000, #222);
+            padding: 2rem 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        footer .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: #ff0000;
+        }
+        footer .footer-content .quick-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        footer .quick-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        footer .quick-links a:hover {
+            color: #ff0000;
+        }
+
+        footer p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>GymFluencer</h1>
+        <nav>
+            <a href="gym1.html" target="_blank">Home</a>
+            <a href="#services">Services</a>
+            <a href="#benefit">Benefit</a>
+            <a href="#blog">Blog</a>
+            <a href="contactus.html" target="_blank">Contact Us</a>
+        </nav>
+        <button><a href="workout.html" target="_blank">Join Us Now</a></button>
+    </header>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <h2>Personal Diet Plan</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" min="12" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="diet" >Preferred Diet Type</label>
+                <select id="diet" name="diet" required>
+                    <option value="" disabled selected>Select your diet type</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="non-vegetarian">Non-Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="pescatarian">Pescatarian</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="allergies">Food Allergies (if any)</label>
+                <textarea id="allergies" name="allergies" placeholder="List any allergies"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="lifestyle">Current Lifestyle</label>
+                <select id="lifestyle" name="lifestyle" required>
+                    <option value="" disabled selected>Select your lifestyle</option>
+                    <option value="sedentary">Sedentary</option>
+                    <option value="light-active">Lightly Active</option>
+                    <option value="active">Active</option>
+                    <option value="very-active">Very Active</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="goals">Dietary Goals</label>
+                <textarea id="goals" name="goals" placeholder="Describe your dietary goals"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+            <div class="form-group note">
+                <p>* All information will be kept confidential.</p>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <div class="quick-links">
+                <a href="gym1.html" target="_blank">Home</a>
+                <a href="#services">Services</a>
+                <a href="contactus.html" target="_blank">Contact Us</a>
+            </div>
+        </div>
+        <p>&copy; 2024 GymFluencer. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
